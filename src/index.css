@@ -1,0 +1,87 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 280 100% 50%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 190 100% 65%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 325 100% 60%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 70%;
+
+    --radius: 0.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-retro-background text-retro-dark font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-pixel tracking-wide;
+  }
+}
+
+@layer components {
+  .retro-container {
+    @apply container py-6 px-4 sm:px-6 animate-pixel-fade-in;
+  }
+  
+  .retro-card {
+    @apply bg-white border border-gray-300 shadow-sm rounded-none;
+  }
+  
+  .retro-grid {
+    @apply bg-white bg-grid-gray-200 bg-opacity-50;
+  }
+  
+  .pixel-shadow {
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.2);
+  }
+
+  .retro-button {
+    @apply font-mono bg-muted hover:bg-muted/80 text-sm px-4 py-2 border border-gray-300 shadow-sm transition-all duration-150 hover:shadow-md active:translate-y-0.5;
+  }
+  
+  .pixel-border {
+    @apply border-2 border-retro-dark;
+  }
+}
+
+/* Custom background pattern */
+.bg-grid-gray-200 {
+  background-image: linear-gradient(to right, rgba(200, 200, 200, 0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(200, 200, 200, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
